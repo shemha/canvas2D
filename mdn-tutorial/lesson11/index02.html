@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas experiment</title>
+  </head>
+  <body>
+    <div id="stage">
+      <canvas id="ui-layer" width="480" height="320"></canvas>
+      <canvas id="game-layer" width="480" height="320"></canvas>
+      <canvas id="background-layer" width="480" height="320"></canvas>
+    </div>
+
+    <style>
+      #stage {
+        width: 480px;
+        height: 320px;
+        position: relative;
+        border: 2px solid black;
+      }
+
+      canvas {
+        position: absolute;
+      }
+      #ui-layer {
+        z-index: 3;
+      }
+      #game-layer {
+        z-index: 2;
+      }
+      #background-layer {
+        z-index: 1;
+      }
+    </style>
+
+    <script>
+      const canvas = document.getElementById("background-layer");
+      const scaleX = window.innerWidth / canvas.width;
+      const scaleY = window.innerHeight / canvas.height;
+
+      const scaleToFit = Math.min(scaleX, scaleY);
+      const scaleToCover = Math.max(scaleX, scaleY);
+
+      stage.style.transformOrigin = "0 0"; //scale from top left
+      stage.style.transform = `scale(${scaleToFit})`;
+    </script>
+  </body>
+</html>

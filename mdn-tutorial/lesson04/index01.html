@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Drawing text - a_filltext_example - code sample</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="300" height="100"></canvas>
+
+    <script>
+      function draw() {
+        const ctx = document.getElementById("canvas").getContext("2d");
+        ctx.font = "48px serif";
+        ctx.fillText("Hello world", 10, 50);
+      }
+
+      draw();
+    </script>
+  </body>
+</html>
